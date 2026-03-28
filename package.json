@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@mcp-graph-workflow/mcp-graph": "^5.19.3"
+  }
+}
