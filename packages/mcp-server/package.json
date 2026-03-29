@@ -1,0 +1,12 @@
+{
+  "name": "@genai-decompiler/mcp-server",
+  "version": "0.0.1",
+  "private": true,
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "dependencies": {
+    "@genai-decompiler/core-contracts": "*",
+    "@genai-decompiler/orchestration": "*",
+    "@modelcontextprotocol/sdk": "^1.28.0"
+  }
+}

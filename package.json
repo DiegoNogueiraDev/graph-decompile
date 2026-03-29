@@ -1,5 +1,20 @@
 {
-  "dependencies": {
-    "@mcp-graph-workflow/mcp-graph": "^5.19.3"
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "lint": "eslint 'packages/*/src/**/*.ts' 'tests/**/*.ts'",
+    "format": "prettier --write 'packages/*/src/**/*.ts' 'tests/**/*.ts'",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@mcp-graph-workflow/mcp-graph": "^5.19.3",
+    "eslint": "^10.1.0",
+    "prettier": "^3.8.1",
+    "typescript": "^5.7.0",
+    "typescript-eslint": "^8.57.2",
+    "vitest": "^3.1.0"
   }
 }

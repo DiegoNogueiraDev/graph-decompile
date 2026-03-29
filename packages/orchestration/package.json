@@ -1,0 +1,15 @@
+{
+  "name": "@genai-decompiler/orchestration",
+  "version": "0.0.1",
+  "private": true,
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "dependencies": {
+    "@genai-decompiler/core-contracts": "*",
+    "@genai-decompiler/ghidra-adapter": "*",
+    "@genai-decompiler/angr-adapter": "*",
+    "@genai-decompiler/llm-adapter": "*",
+    "@genai-decompiler/validation": "*",
+    "@genai-decompiler/storage": "*"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "@genai-decompiler/core-contracts",
+  "version": "0.0.1",
+  "private": true,
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "dependencies": {
+    "zod": "^4.3.6",
+    "@genai-decompiler/ghidra-adapter": "*",
+    "@genai-decompiler/angr-adapter": "*"
+  }
+}

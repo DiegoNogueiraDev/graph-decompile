@@ -1,0 +1,12 @@
+{
+  "name": "@genai-decompiler/validation",
+  "version": "0.0.1",
+  "private": true,
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "dependencies": {
+    "@genai-decompiler/core-contracts": "*",
+    "@genai-decompiler/llm-adapter": "*",
+    "zod": "^3.25.76"
+  }
+}
