@@ -1,4 +1,4 @@
-# @genai-decompiler/mcp-server
+# @mcp-graph-workflow/genai-decompiler
 
 MCP server for GenAI-powered binary decompilation with **Ghidra** and **angr** backends.
 
@@ -7,7 +7,7 @@ Exposes binary analysis tools via the [Model Context Protocol](https://modelcont
 ## Quick Start
 
 ```bash
-npx -y @genai-decompiler/mcp-server
+npx -y @mcp-graph-workflow/genai-decompiler
 ```
 
 ### Claude Code / `.mcp.json`
@@ -17,7 +17,7 @@ npx -y @genai-decompiler/mcp-server
   "mcpServers": {
     "genai-decompiler": {
       "command": "npx",
-      "args": ["-y", "@genai-decompiler/mcp-server"]
+      "args": ["-y", "@mcp-graph-workflow/genai-decompiler"]
     }
   }
 }
@@ -26,7 +26,7 @@ npx -y @genai-decompiler/mcp-server
 ### Global Install
 
 ```bash
-npm install -g @genai-decompiler/mcp-server
+npm install -g @mcp-graph-workflow/genai-decompiler
 genai-decompiler
 ```
 

@@ -1,5 +1,5 @@
 {
-  "name": "@genai-decompiler/mcp-server",
+  "name": "@mcp-graph-workflow/genai-decompiler",
   "version": "0.1.0",
   "description": "MCP server for GenAI-powered binary decompilation with Ghidra and angr backends",
   "type": "module",
