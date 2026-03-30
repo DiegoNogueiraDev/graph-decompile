@@ -16,9 +16,10 @@ const PROJECT_ROOT = process.env["DECOMPILER_PROJECT_ROOT"] ?? process.cwd();
 const WORKSPACE_BASE = join(PROJECT_ROOT, "workspaces");
 const DB_PATH = join(PROJECT_ROOT, "workspaces", "decompiler.db");
 const GHIDRA_PATH = join(PROJECT_ROOT, "ghidra");
-const GHIDRA_SCRIPT = join(PROJECT_ROOT, "ghidra", "scripts", "ExtractAll.java");
+const GHIDRA_SCRIPT = join(PROJECT_ROOT, "ghidra", "scripts", "ExtractAll.py");
 const ANGR_WORKER = join(PROJECT_ROOT, "python", "angr-worker", "angr_worker.py");
-const PYTHON_PATH = "python3";
+const PYTHON_PATH = process.env["ANGR_PYTHON_PATH"]
+  ?? join(PROJECT_ROOT, "python", "angr-worker", ".venv", "bin", "python3");
 const TIMEOUT_MS = 300_000; // 5 minutes
 
 function getDb(): Database {

@@ -9,13 +9,21 @@ import { runAngrWorker } from "@genai-decompiler/angr-adapter";
 const PROJECT_ROOT = join(import.meta.dirname, "..", "..");
 const SAMPLE_BINARY = join(PROJECT_ROOT, "bin", "MTC");
 const GHIDRA_PATH = join(PROJECT_ROOT, "ghidra");
-const GHIDRA_SCRIPT = join(PROJECT_ROOT, "ghidra", "scripts", "ExtractAll.java");
+const GHIDRA_SCRIPT = join(PROJECT_ROOT, "ghidra", "scripts", "ExtractAll.py");
 const GHIDRA_HEADLESS = join(GHIDRA_PATH, "support", "analyzeHeadless");
 
 function isGhidraAvailable(): boolean {
   if (!existsSync(GHIDRA_HEADLESS) || !existsSync(SAMPLE_BINARY)) return false;
   try {
     execFileSync("java", ["-version"], { timeout: 5_000, stdio: "ignore" });
+    // Ghidra 11.x requires JDK 17-21; check compatibility
+    // Ghidra 11.2.1 requires JDK >= 21. Jython scripts bypass OSGi so any JDK >= 21 works.
+    const versionOutput = execFileSync("java", ["--version"], { timeout: 5_000 }).toString();
+    const match = versionOutput.match(/(\d+)\.\d+/);
+    if (match) {
+      const major = parseInt(match[1], 10);
+      if (major < 21) return false;
+    }
     return true;
   } catch {
     return false;
@@ -67,7 +75,7 @@ describe.skipIf(!isGhidraAvailable())(
           expect(typeof fn.size).toBe("number");
         }
       },
-      { timeout: 360_000 },
+      360_000,
     );
 
     it(
@@ -94,7 +102,7 @@ describe.skipIf(!isGhidraAvailable())(
           expect(typeof str.value).toBe("string");
         }
       },
-      { timeout: 360_000 },
+      360_000,
     );
   },
 );
@@ -132,7 +140,7 @@ describe.skipIf(!isAngrAvailable())(
           expect(Array.isArray(fn.edges)).toBe(true);
         }
       },
-      { timeout: 360_000 },
+      360_000,
     );
   },
 );

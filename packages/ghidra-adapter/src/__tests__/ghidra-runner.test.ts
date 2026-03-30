@@ -12,7 +12,7 @@ describe("buildHeadlessArgs", () => {
     binaryPath: "/tmp/test.bin",
     projectDir: "/tmp/ghidra-projects",
     projectName: "test_project",
-    scriptPath: "/scripts/ExtractAll.java",
+    scriptPath: "/scripts/ExtractAll.py",
     outputPath: "/tmp/output.json",
     timeoutMs: 120_000,
   };

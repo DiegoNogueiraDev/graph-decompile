@@ -1,6 +1,6 @@
 import { execFile } from "node:child_process";
 import { readFileSync } from "node:fs";
-import { join } from "node:path";
+import { dirname, join } from "node:path";
 
 export interface GhidraRunnerOptions {
   ghidraPath: string;
@@ -47,6 +47,8 @@ export function buildHeadlessArgs(opts: GhidraRunnerOptions): string[] {
     opts.projectName,
     "-import",
     opts.binaryPath,
+    "-scriptPath",
+    dirname(opts.scriptPath),
     "-postScript",
     opts.scriptPath,
     opts.outputPath,

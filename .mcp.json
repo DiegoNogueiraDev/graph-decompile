@@ -1,5 +1,12 @@
 {
   "mcpServers": {
+    "genai-decompiler": {
+      "command": "npx",
+      "args": [
+        "tsx",
+        "packages/mcp-server/src/stdio.ts"
+      ]
+    },
     "mcp-graph": {
       "command": "npx",
       "args": [
