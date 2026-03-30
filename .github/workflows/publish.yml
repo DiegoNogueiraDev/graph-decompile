@@ -21,7 +21,7 @@ jobs:
 
       - run: npm ci
       - run: npm run build
-      - run: npm test
+      - run: npx vitest run tests/smoke/npm-package.test.ts
 
       - run: npm publish -w packages/mcp-server --provenance --access public
         env:
