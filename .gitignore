@@ -33,7 +33,6 @@ pip-log.txt
 *.pfx
 
 # ─── Ghidra ──────────────────────────────────────────────────────────────────
-ghidra/
 *.rep/
 *.gpr
 ghidra_scripts/

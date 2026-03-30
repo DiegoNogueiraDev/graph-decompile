@@ -1,12 +1,65 @@
 {
   "name": "@genai-decompiler/mcp-server",
-  "version": "0.0.1",
-  "private": true,
-  "main": "./src/index.ts",
-  "types": "./src/index.ts",
+  "version": "0.1.0",
+  "description": "MCP server for GenAI-powered binary decompilation with Ghidra and angr backends",
+  "type": "module",
+  "license": "MIT",
+  "author": "Diego Nogueira (https://github.com/DiegoNogueiraDev)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DiegoNogueiraDev/graph-decompile.git"
+  },
+  "homepage": "https://github.com/DiegoNogueiraDev/graph-decompile#readme",
+  "bugs": {
+    "url": "https://github.com/DiegoNogueiraDev/graph-decompile/issues"
+  },
+  "keywords": [
+    "mcp",
+    "decompiler",
+    "ghidra",
+    "angr",
+    "binary-analysis",
+    "reverse-engineering",
+    "genai",
+    "claude"
+  ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "bin": {
+    "genai-decompiler": "./dist/stdio.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup",
+    "prepublishOnly": "npm run build"
+  },
   "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.28.0",
+    "better-sqlite3": "^12.8.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
     "@genai-decompiler/core-contracts": "*",
     "@genai-decompiler/orchestration": "*",
-    "@modelcontextprotocol/sdk": "^1.28.0"
+    "@genai-decompiler/ghidra-adapter": "*",
+    "@genai-decompiler/angr-adapter": "*",
+    "@genai-decompiler/storage": "*",
+    "@types/better-sqlite3": "^7.6.13"
   }
 }
